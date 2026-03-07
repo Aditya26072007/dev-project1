@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Groww</title>
+    <link rel="stylesheet" href="growwstyle.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <nav>
+      <ol>
+        <li><img src="growwpng.png" alt="Groww Logo" width="20" />Groww</li>
+        <li>Stocks</li>
+        <li>Web3</li>
+        <li>Tax Calculator</li>
+        <li class="divider"></li>
+        <a href="../To-Do-page/todo.html" target="_blank">
+        <li>To-Do-Planner</li></a>
+        <li class="inputfield">
+          <input type="text" placeholder="Search Groww...." />
+        </li>
+        <li class="login-btn"><button>Login/Sign up</button></li>
+      </ol>
+    </nav>
+
+    <div class="images">
+      <div class="marquee">
+        <div class="marquee-content" id="marketData">
+          Nifty 50: <span id="nifty"></span> &nbsp;&nbsp; &nbsp;&nbsp; Gold:
+          <span id="gold"></span> &nbsp;&nbsp; &nbsp;&nbsp; Silver:
+          <span id="silver"></span> &nbsp;&nbsp; &nbsp;&nbsp; Natural Gas:
+          <span id="gas"></span> &nbsp;&nbsp; &nbsp;&nbsp; USD/INR:
+          <span id="usd"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-line">GROW YOUR WEALTH WITH GROWW</div>
+    <div class="get-started">
+      <button>Get Started</button>
+    </div>
+    <div class="hero-image">
+      <img
+        src="Gemini_Generated_Image_4e5d7y4e5d7y4e5d.png"
+        alt="Groww Hero Image"
+      />
+    </div>
+
+    <div class="grid">
+      <div class="square">
+        <img src="1234.png" class="hidden preview1" />
+      </div>
+      <div class="square">
+        <img src="1234.png" class="hidden preview1" />
+      </div>
+      <div class="square">
+        <img src="1234.png" class="hidden preview1" />
+      </div>
+      <div class="square">
+        <img src="1234.png" class="hidden preview1" />
+      </div>
+      <div class="square">
+        <img src="1234.png" class="hidden preview1" />
+      </div>
+      <div class="square">
+        <img src="1234.png" class="hidden preview1" />
+      </div>
+      <div class="square">
+        <img src="1234.png" class="hidden preview1" />
+      </div>
+      <div class="square">
+        <img src="1234.png" class="hidden preview1" />
+      </div>
+      <div class="square">
+        <img src="1234.png" class="hidden preview1" />
+      </div>
+      <div class="square">
+        <img src="1234.png" class="hidden preview1" />
+      </div>
+      <div class="square">
+        <img src="1234.png" class="hidden preview1" />
+      </div>
+      <div class="square">
+        <img src="1234.png" class="hidden preview1" />
+      </div>
+      <div class="square">
+        <img src="1234.png" class="hidden preview1" />
+      </div>
+      <div class="square">
+        <img src="1234.png" class="hidden preview1" />
+      </div>
+      <div class="square">
+        <img src="1234.png" class="hidden preview1" />
+      </div>
+
+      <div class="preview" id="preview">
+        <!-- <img src="1234.png" id="preview-img"> -->
+        <div class="chart-box">
+          <h2>Ethereum Live Price</h2>
+          <canvas id="ethChart" class="preview-img"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="bgadd">
+      <section class="feature-section">
+        <div class="left-text">
+          <div
+            class="step"
+            data-img="img1.png"
+            data-bg="linear-gradient(90deg,rgba(0, 0, 0, 1) 0%, rgba(20, 23, 20, 1) 52%, rgba(161, 56, 88, 1) 100%)"
+          >
+            <h2>Track charts</h2>
+            <p>Track charts and positions easily.</p>
+          </div>
+
+          <div
+            class="step"
+            data-img="img1.png"
+            data-bg="linear-gradient(90deg,rgba(0, 0, 0, 1) 0%, rgba(20, 23, 20, 1) 52%, rgba(56, 126, 161, 1) 100%)"
+          >
+            <h2>Advanced charts</h2>
+            <p>Analyse market trends.</p>
+          </div>
+
+          <div
+            class="step"
+            data-img="img2.png"
+            data-bg="linear-gradient(90deg,rgba(0, 0, 0, 1) 0%, rgba(20, 23, 20, 1) 52%, rgba(56, 161, 88, 1) 100%)"
+          >
+            <h2>Buy and Sell</h2>
+            <p>Trade instantly.</p>
+          </div>
+
+          <div
+            class="step"
+            data-img="img2.png"
+            data-bg="linear-gradient(90deg,rgba(0, 0, 0, 1) 0%, rgba(20, 23, 20, 1) 52%, rgba(56, 161, 88, 1) 100%)"
+          >
+            <h2>Smart orders</h2>
+            <p>Place market and limit orders.</p>
+          </div>
+
+          <div
+            class="step"
+            data-img="img3.png"
+            data-bg="linear-gradient(90deg,rgba(0, 0, 0, 1) 0%, rgba(20, 23, 20, 1) 52%, rgba(161, 56, 56, 1) 100%)"
+          >
+            <h2>Portfolio analysis</h2>
+            <p>Track your performance.</p>
+          </div>
+        </div>
+
+        <div class="right-image">
+          <img id="feature-img" src="img1.png" />
+        </div>
+      </section>
+    </div>
+
+    <section class="groww-family">
+      <h2>More from the Groww family</h2>
+
+      <div class="card-container">
+        <div class="card">
+          <h3>915</h3>
+        </div>
+
+        <div class="card">
+          <h3>W</h3>
+        </div>
+
+        <div class="card">
+          <h3>API Trading</h3>
+        </div>
+
+        <div class="card">
+          <h3>Analytics</h3>
+        </div>
+
+        <div class="card">
+          <h3>Invest+</h3>
+        </div>
+
+        <div class="card">
+          <h3>Smart Tools</h3>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <!-- <p>&copy; Aditya Soni. All rights reserved.</p> -->
+
+      <div class="footer-content">
+        <ol>
+          <li><img src="growwpng.png" alt="logo" /></li>
+          <li>GROWW</li>
+          <li>A Finance app made for traders and investors</li>
+          <li id="stocks">Stocks</li>
+          <li>Web3</li>
+          <li>Tax Calculator</li>
+
+          <a href="../To-Do-page/todo.html" target="_blank">
+        <li>To-Do-Planner</li></a>
+          <li>
+            <a href="mailto:adityasoni@gmail.com"></a>
+            <i class="fa-solid fa-envelope"></i>
+          </li>
+          <li>
+            <a href="https://github.com/yourusername" target="_blank">
+              <i class="fa-brands fa-github"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+          </li>
+        </ol>
+      </div>
+
+
+
+      <div class="footer-herosection">
+        <p>
+    This project is created for <strong>learning and demonstration purposes</strong>.
+    It is not an official financial platform and does not provide real financial services.
+  </p>
+
+  <p>
+    The market data displayed here may not be accurate or up-to-date and should
+    not be used for making financial decisions or transactions.
+  </p>
+
+  <p>
+    The creator of this project is not responsible for any losses or damages
+    resulting from the use of this website. Always conduct your own research and
+    consult a financial advisor before making investment decisions.
+  </p>
+
+  <p>
+    The source code for this project is available on GitHub:
+    <a href="https://github.com/yourusername/groww" target="_blank">View Source Code</a>
+  </p>
+
+  <p>
+    While efforts are made to ensure the accuracy of information, errors may
+    occur. Always verify financial information from multiple sources.
+  </p>
+      </div>
+      <div class="span-container"> 
+      <div class="image-footer"><img src="growwpng.png" alt="logo" /></div>
+      <div class="text-footer"><p>Build with passion<br> Using HTML • CSS • JavaScript • Chart.js <br> &copy; Aditya Soni. All rights reserved.</p></div>
+      </div>
+    </footer>
+
+    <script src="growwscript.js"></script>
+  </body>
+</html>

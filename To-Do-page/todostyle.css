@@ -1,0 +1,166 @@
+
+/* Reset */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Page background */
+body{
+background: linear-gradient(135deg,#eef2f7,#dbe6f6);
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+
+}
+
+/* Main container */
+.to-do-container{
+background:white;
+padding:25px;
+margin-top: 5%;
+width:100%;
+border-radius:12px;
+box-shadow:0 8px 20px rgba(0,0,0,0.1);
+text-align:center;
+}
+
+/* Heading */
+.to-do-container h1{
+margin-bottom:20px;
+color:#333;
+}
+
+/* Input section */
+#taskInput{
+width:70%;
+padding:10px;
+border:1px solid #ccc;
+border-radius:6px;
+outline:none;
+font-size:14px;
+}
+
+/* Add task button */
+#addTaskBtn{
+padding:10px 14px;
+margin-left:6px;
+border:none;
+background:#4f46e5;
+color:white;
+border-radius:6px;
+cursor:pointer;
+transition:0.2s;
+}
+
+#addTaskBtn:hover{
+background:#4338ca;
+}
+
+/* Task list */
+ul{
+list-style:none;
+margin-top:20px;
+}
+
+/* Task item */
+li{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:10px;
+margin-bottom:8px;
+margin-top: 5%;
+background:#f7f9fc;
+border-radius:6px;
+font-size:15px;
+}
+
+/* Delete / action buttons */
+li button{
+border:none;
+background:#ef4444;
+color:white;
+padding:6px 10px;
+margin-left: auto;
+margin-right: 5%;
+border-radius:5px;
+cursor:pointer;
+font-size:13px;
+}
+
+li button:hover{
+background:#dc2626;
+}
+
+/* Progress section */
+.progress-checker{
+position:absolute;
+/* bottom:120px;
+right:0px; */
+text-align: center;
+margin: auto;
+
+margin-right: auto;
+margin-top: -0.2%;
+display: inline-block;
+}
+
+
+/* Task completed button */
+#removetask{
+padding:8px 12px;
+border:none;
+background:#10b981;
+color:white;
+border-radius:6px;
+cursor:pointer;
+width: auto;
+}
+
+#removetask:hover{
+background:#059669;
+}
+
+/* Priority selection box */
+#box-container{
+margin-top:10px;
+background:white;
+padding:12px;
+border-radius:8px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Radio spacing */
+#box-container label{
+display:block;
+margin-bottom:6px;
+cursor:pointer;
+}
+
+
+.hidden{
+display:none;
+}
+
+
+
+
+
+.chart-container{
+width:500px;
+margin:40px auto;
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 8px 20px rgba(0,0,0,0.1);
+}
+
+.chart-container h2{
+text-align:center;
+margin-bottom:15px;
+}
+

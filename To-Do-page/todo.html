@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do-Planner</title>
+    <link rel="stylesheet" href="todostyle.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    
+    <div>
+    <!-- Navigation Bar -->
+    <div class="to-do-container">
+      <h1>To-Do Planner</h1>
+      <input type="text" id="taskInput" placeholder="Add a new task..." />
+      <button id="addTaskBtn">Add Task</button>
+    </div>
+
+
+
+    <div class="chart-container">
+  <h2>Weekly Productivity&nbsp;&nbsp;
+  <div class="progress-checker">
+      <button id="removetask">Task Completed</button>
+      <!-- <div class="hidden" id="box-container">
+        <input type="radio" name="priority" value="low" /> Low
+        <input type="radio" name="priority" value="medium" /> Medium
+        <input type="radio" name="priority" value="high" /> High
+      </div> -->
+    </div></h2>
+  <canvas id="progressChart"></canvas>
+</div>
+
+</div>
+    <script src="todoscript.js"></script>
+  </body>
+</html>
