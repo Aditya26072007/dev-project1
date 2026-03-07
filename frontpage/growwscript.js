@@ -1,69 +1,69 @@
 
-// const url = 'https://yahoo-finance-real-time1.p.rapidapi.com/market/get-quotes?region=IN&symbols=%5ENSEI%2CGC%3DF%2CSI%3DF%2CNG%3DF%2CINR%3DX';
-// const options = {
-// 	method: 'GET',
-// 	headers: {
-// 		'x-rapidapi-key': "775e86374bmshf402726fb55ec0ep11f4c1jsn7edf0a26b48e",
-// 		'x-rapidapi-host': 'yahoo-finance-real-time1.p.rapidapi.com'
-// 	}
-// };
-// async function fetchMarketData() {
-// try {
-// 	const response = await fetch(url, options);
-// 	const text = await response.text();
-//     const data = JSON.parse(text);
-// 	console.log(data);
+const url = 'https://yahoo-finance-real-time1.p.rapidapi.com/market/get-quotes?region=IN&symbols=%5ENSEI%2CGC%3DF%2CSI%3DF%2CNG%3DF%2CINR%3DX';
+const options = {
+	method: 'GET',
+	headers: {
+		'x-rapidapi-key': "775e86374bmshf402726fb55ec0ep11f4c1jsn7edf0a26b48e",
+		'x-rapidapi-host': 'yahoo-finance-real-time1.p.rapidapi.com'
+	}
+};
+async function fetchMarketData() {
+try {
+	const response = await fetch(url, options);
+	const text = await response.text();
+    const data = JSON.parse(text);
+	console.log(data);
 
-//     const quotes = data.quoteResponse.result;
+    const quotes = data.quoteResponse.result;
 
-//     quotes.forEach(item => {
-//   if (item.symbol === "^NSEI") {
-//     document.getElementById("nifty").innerText = `${item.regularMarketChangePercent}%`;
-//     if (item.regularMarketChangePercent >= 0) {
-//   document.getElementById("nifty").style.color = "lime";
-// } else {
-//   document.getElementById("nifty").style.color = "red";
-// }
-//   }
+    quotes.forEach(item => {
+  if (item.symbol === "^NSEI") {
+    document.getElementById("nifty").innerText = `${item.regularMarketChangePercent}%`;
+    if (item.regularMarketChangePercent >= 0) {
+  document.getElementById("nifty").style.color = "lime";
+} else {
+  document.getElementById("nifty").style.color = "red";
+}
+  }
 
-//   if (item.symbol === "GC=F") {
-//     document.getElementById("gold").innerText = `${item.regularMarketChangePercent}%`;
-//     if (item.regularMarketChangePercent >= 0) {
-//       document.getElementById("gold").style.color = "lime";
-//     } else {
-//       document.getElementById("gold").style.color = "red";
-//     }
-//   }
+  if (item.symbol === "GC=F") {
+    document.getElementById("gold").innerText = `${item.regularMarketChangePercent}%`;
+    if (item.regularMarketChangePercent >= 0) {
+      document.getElementById("gold").style.color = "lime";
+    } else {
+      document.getElementById("gold").style.color = "red";
+    }
+  }
 
-//   if (item.symbol === "SI=F") {
-//     document.getElementById("silver").innerText = `${item.regularMarketChangePercent}%`;
-//     if (item.regularMarketChangePercent >= 0) {
-//       document.getElementById("silver").style.color = "lime";
-//     } else {
-//       document.getElementById("silver").style.color = "red";
-//     }
-//   }
+  if (item.symbol === "SI=F") {
+    document.getElementById("silver").innerText = `${item.regularMarketChangePercent}%`;
+    if (item.regularMarketChangePercent >= 0) {
+      document.getElementById("silver").style.color = "lime";
+    } else {
+      document.getElementById("silver").style.color = "red";
+    }
+  }
 
-//   if (item.symbol === "NG=F") {
-//     document.getElementById("gas").innerText = `${item.regularMarketChangePercent}%`;
-//     if (item.regularMarketChangePercent >= 0) {
-//       document.getElementById("gas").style.color = "lime";
-//     } else {
-//       document.getElementById("gas").style.color = "red";
-//     }
-//   }
+  if (item.symbol === "NG=F") {
+    document.getElementById("gas").innerText = `${item.regularMarketChangePercent}%`;
+    if (item.regularMarketChangePercent >= 0) {
+      document.getElementById("gas").style.color = "lime";
+    } else {
+      document.getElementById("gas").style.color = "red";
+    }
+  }
 
-//   if (item.symbol === "INR=X") {
-//     document.getElementById("usd").innerText = item.regularMarketPrice;
-//     document.getElementById("usd").style.color = "lime";
-// }
-// });
-// } catch (error) {
-// 	console.error(error);
-// }
-// }
-// fetchMarketData();
-// setInterval(fetchMarketData, 86400000); // run every 24 hours
+  if (item.symbol === "INR=X") {
+    document.getElementById("usd").innerText = item.regularMarketPrice;
+    document.getElementById("usd").style.color = "lime";
+}
+});
+} catch (error) {
+	console.error(error);
+}
+}
+fetchMarketData();
+setInterval(fetchMarketData, 86400000); // run every 24 hours
 
 
 
