@@ -108,7 +108,15 @@ data: {
 labels: ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"],
 datasets: [{
 label: "Tasks Completed",
-data: Object.values(weeklyProgress),
+data: [
+weeklyProgress.Mon,
+weeklyProgress.Tue,
+weeklyProgress.Wed,
+weeklyProgress.Thu,
+weeklyProgress.Fri,
+weeklyProgress.Sat,
+weeklyProgress.Sun
+],
 backgroundColor: "#4f46e5",
 borderRadius: 5
 }]
