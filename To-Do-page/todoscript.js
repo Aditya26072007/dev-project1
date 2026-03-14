@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded",()=>{
 // });
 
 
-
 const taskInput = document.querySelector("#taskInput");
 const addTaskBtn = document.querySelector("#addTaskBtn");
 const containertodo=document.querySelector(".to-do-container");
@@ -22,7 +21,7 @@ tasks.forEach((task) =>render(task));
 
 
 
-const weeklyProgress = JSON.parse(localStorage.getItem("weeklyProgress")) ||{
+ const weeklyProgress = JSON.parse(localStorage.getItem("weeklyProgress")) ||{
     Sun:0,
 Mon:0,
 Tue:0,
@@ -33,7 +32,6 @@ Sat:0
 
 }
 const days = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
-const chartDays = ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"];
 addTaskBtn.addEventListener("click", () => {
 
 const taskText = taskInput.value.trim();
@@ -43,7 +41,6 @@ if(taskText===""){
 }
 if(taskText){
     const newTask = {
-        
  id: Date.now(),
  text: taskText
 };
@@ -55,15 +52,6 @@ console.log(tasks);
 }
 
  });
-
-removebtn.addEventListener("click", (e) => {
-    e.stopPropagation();
-    days.forEach((day) => {
-        weeklyProgress[day] = 0;
-    });
-    localStorage.setItem("weeklyProgress", JSON.stringify(weeklyProgress));
-    graphmaker();
-});
 
 function render(task){
     const li=document.createElement("li");
@@ -77,15 +65,27 @@ deleteBtn1.addEventListener("click", (e) => {
     li.remove();
     savetolocal();
 });
+removebtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    weeklyProgress[days[0]] =0;
+    weeklyProgress[days[1]] =0;
+    weeklyProgress[days[2]] =0;
+    weeklyProgress[days[3]] =0;
+    weeklyProgress[days[4]] =0;
+    weeklyProgress[days[5]] =0;
+    weeklyProgress[days[6]] =0;
+    localStorage.setItem("weeklyProgress", JSON.stringify(weeklyProgress));
+    graphmaker();
+});
     const deleteBtn = li.querySelector(".delete-btn");
 deleteBtn.addEventListener("click", (e) => {
     e.stopPropagation();
     tasks=tasks.filter(t=>t.id!==task.id);
 
 
- const today = new Date()
- const dayNumber = today.getDay()
- weeklyProgress[days[dayNumber]] += 1;
+today = new Date()
+dayNumber = today.getDay()
+weeklyProgress[days[dayNumber]] += 1;
 
 localStorage.setItem("weeklyProgress", JSON.stringify(weeklyProgress));
 graphmaker();
@@ -105,12 +105,20 @@ const ctx = document.getElementById("progressChart");
 let progressChart = new Chart(ctx, {
 type: "bar",
 data: {
- labels: chartDays,
+labels: ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"],
 datasets: [{
 label: "Tasks Completed",
- data: chartDays.map((day) => weeklyProgress[day] ?? 0),
- backgroundColor: "#4f46e5",
- borderRadius: 5
+data: [
+weeklyProgress.Mon,
+weeklyProgress.Tue,
+weeklyProgress.Wed,
+weeklyProgress.Thu,
+weeklyProgress.Fri,
+weeklyProgress.Sat,
+weeklyProgress.Sun
+],
+backgroundColor: "#4f46e5",
+borderRadius: 5
 }]
 },
 options:{
@@ -124,7 +132,7 @@ y:{beginAtZero:true}
 });
 
 function graphmaker(){
-progressChart.data.datasets[0].data = chartDays.map((day) => weeklyProgress[day] ?? 0);
+progressChart.data.datasets[0].data = Object.values(weeklyProgress);
 progressChart.update();
 }
 
