@@ -77,8 +77,8 @@ document.addEventListener("DOMContentLoaded", () => {
       e.stopPropagation();
       tasks = tasks.filter((t) => t.id !== task.id);
 
-      today = new Date();
-      dayNumber = today.getDay();
+      const today = new Date();
+      const dayNumber = today.getDay();
       weeklyProgress[days[dayNumber]] += 1;
 
       localStorage.setItem("weeklyProgress", JSON.stringify(weeklyProgress));
@@ -127,8 +127,16 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   });
 
-  function graphmaker() {
-    progressChart.data.datasets[0].data = Object.values(weeklyProgress);
-    progressChart.update();
-  }
+  function graphmaker(){
+progressChart.data.datasets[0].data = [
+weeklyProgress.Mon,
+weeklyProgress.Tue,
+weeklyProgress.Wed,
+weeklyProgress.Thu,
+weeklyProgress.Fri,
+weeklyProgress.Sat,
+weeklyProgress.Sun
+];
+progressChart.update();
+}
 });
