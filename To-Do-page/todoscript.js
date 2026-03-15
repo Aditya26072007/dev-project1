@@ -48,6 +48,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  removebtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      weeklyProgress[days[0]] = 0;
+      weeklyProgress[days[1]] = 0;
+      weeklyProgress[days[2]] = 0;
+      weeklyProgress[days[3]] = 0;
+      weeklyProgress[days[4]] = 0;
+      weeklyProgress[days[5]] = 0;
+      weeklyProgress[days[6]] = 0;
+      localStorage.setItem("weeklyProgress", JSON.stringify(weeklyProgress));
+      graphmaker();
+    });
   function render(task) {
     const li = document.createElement("li");
     li.innerHTML = `${task.text} <button class="delete-btn">Task-Completed</button> <button class="delete-btn1">Remove Task</button>`;
@@ -60,18 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
       li.remove();
       savetolocal();
     });
-    removebtn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      weeklyProgress[days[0]] = 0;
-      weeklyProgress[days[1]] = 0;
-      weeklyProgress[days[2]] = 0;
-      weeklyProgress[days[3]] = 0;
-      weeklyProgress[days[4]] = 0;
-      weeklyProgress[days[5]] = 0;
-      weeklyProgress[days[6]] = 0;
-      localStorage.setItem("weeklyProgress", JSON.stringify(weeklyProgress));
-      graphmaker();
-    });
+    
     const deleteBtn = li.querySelector(".delete-btn");
     deleteBtn.addEventListener("click", (e) => {
       e.stopPropagation();
